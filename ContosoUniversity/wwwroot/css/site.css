@@ -12,7 +12,17 @@ html {
   position: relative;
   min-height: 100%;
 }
-
+.table td {
+    border: 5px solid red;
+    color:white;
+}
+p{
+    color:white;
+}
+h1{
+    color:white;
+}
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url("12244635_989675547794131_1076166319381382704_o.jpg");
 }
