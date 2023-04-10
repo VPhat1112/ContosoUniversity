@@ -17,10 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\css\12244635_989675547794131_1076166319381382704_o.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Folder Include="Pages\CongNhan\" />
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 

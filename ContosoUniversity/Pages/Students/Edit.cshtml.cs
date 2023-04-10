@@ -21,7 +21,7 @@ namespace ContosoUniversity.Pages.Students
         }
 
         [BindProperty]
-        public Student Student { get; set; }
+        public CongNhan CongNhan { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,12 +30,9 @@ namespace ContosoUniversity.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Students.FindAsync(id);
+            CongNhan = await _context.congNhans.FindAsync(id);
 
-            //if (Student == null)
-            //{
-            //    return NotFound();
-            //}
+            
             return Page();
 
         }
@@ -44,20 +41,17 @@ namespace ContosoUniversity.Pages.Students
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            var studentToUpdate = await _context.Students.FindAsync(id);
+            var CongNhanToUpdate = await _context.congNhans.FindAsync(id);
             if (id ==null)
             {
                 return NotFound();
             }
-            //if (studentToUpdate == null)
-            //{
-            //    return NotFound();
-            //}
+           
             try {
 
                
-                    var entry = _context.Update (studentToUpdate);
-                    entry.CurrentValues.SetValues(Student);
+                    var entry = _context.Update (CongNhanToUpdate);
+                    entry.CurrentValues.SetValues(CongNhan);
                     await _context.SaveChangesAsync();
                     return RedirectToPage("./Index");
                 
@@ -71,7 +65,7 @@ namespace ContosoUniversity.Pages.Students
 
         private bool StudentExists(int id)
         {
-            return (_context.Students?.Any(e => e.ID == id)).GetValueOrDefault();
+            return (_context.congNhans?.Any(e => e.IDCongNhan == id)).GetValueOrDefault();
         }
     }
 }

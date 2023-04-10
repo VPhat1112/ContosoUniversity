@@ -13,15 +13,15 @@ namespace ContosoUniversity.Data
             : base(options)
         {
         }
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Enrollment> Enrollments { get; set; }
-        public DbSet<Course> Courses { get; set; }
+        public DbSet<CongNhan> congNhans { get; set; }
+        public DbSet<BangDangKy> BangDangKies { get; set; }
+        public DbSet<Calam> calams { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Course>().ToTable("Course");
-            modelBuilder.Entity<Enrollment>().ToTable("Enrollment");
-            modelBuilder.Entity<Student>().ToTable("Student");
+            modelBuilder.Entity<Calam>().ToTable("Calam");
+            modelBuilder.Entity<BangDangKy>().ToTable("BangDangKy");
+            modelBuilder.Entity<CongNhan>().ToTable("CongNhan");
         }
     }
 }

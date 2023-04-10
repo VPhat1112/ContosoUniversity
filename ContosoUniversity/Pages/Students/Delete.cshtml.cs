@@ -21,7 +21,7 @@ namespace ContosoUniversity.Pages.Students
         }
 
         [BindProperty]
-        public Student Student { get; set; }
+        public CongNhan CongNhan { get; set; }
         public string ErrorMessage { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id, bool? saveChangesError = false)
@@ -31,11 +31,11 @@ namespace ContosoUniversity.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Students
+           CongNhan = await _context.congNhans
                 .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.IDCongNhan == id);
 
-            if (Student == null)
+            if (CongNhan == null)
             {
                 return NotFound();
             }
@@ -55,16 +55,16 @@ namespace ContosoUniversity.Pages.Students
                 return NotFound();
             }
 
-            var student = await _context.Students.FindAsync(id);
+            var congnhan = await _context.congNhans.FindAsync(id);
 
-            if (student == null)
+            if (congnhan == null)
             {
                 return NotFound();
             }
 
             try
             {
-                _context.Students.Remove(student);
+                _context.congNhans.Remove(congnhan);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
             }

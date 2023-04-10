@@ -26,7 +26,7 @@ namespace ContosoUniversity.Pages.Students
         }
 
         [BindProperty]
-        public StudentVM StudentVM { get; set; }
+        public CongNhanVM CongNhanVM { get; set; }
 
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
@@ -37,8 +37,8 @@ namespace ContosoUniversity.Pages.Students
                 return Page();
             }
 
-            var entry = _context.Add(new Student());
-            entry.CurrentValues.SetValues(StudentVM);
+            var entry = _context.Add(new CongNhan());
+            entry.CurrentValues.SetValues(CongNhanVM);
             await _context.SaveChangesAsync();
             return RedirectToPage("./Index");
         }

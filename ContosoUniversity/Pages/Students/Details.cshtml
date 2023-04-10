@@ -11,40 +11,40 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.LastName)
+            @Html.DisplayNameFor(model => model.CongNhan.LastName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Student.LastName)
+            @Html.DisplayFor(model => model.CongNhan.LastName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.FirstMidName)
+            @Html.DisplayNameFor(model => model.CongNhan.FirstMidName)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Student.FirstMidName)
+            @Html.DisplayFor(model => model.CongNhan.FirstMidName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.EnrollmentDate)
+            @Html.DisplayNameFor(model => model.CongNhan.BirthDay)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Student.EnrollmentDate)
+            @Html.DisplayFor(model => model.CongNhan.BirthDay)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Student.Enrollments)
+            @Html.DisplayNameFor(model => model.CongNhan.bangDangKies)
         </dt>
         <dd class="col-sm-10">
             <table class="table">
                 <tr>
-                    <th>Course Title</th>
-                    <th>Grade</th>
+                    <th>Calam Title</th>
+                    <th>Kind</th>
                 </tr>
-                @foreach (var item in Model.Student.Enrollments)
+                @foreach (var item in Model.CongNhan.bangDangKies)
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Course.Title)
+                            @Html.DisplayFor(modelItem => item.calam.Title)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Grade)
+                            @Html.DisplayFor(modelItem => item.kind)
                         </td>
                     </tr>
                 }
@@ -53,6 +53,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Student?.ID">Edit</a> |
+    <a asp-page="./Edit" asp-route-id="@Model.CongNhan?.IDCongNhan">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

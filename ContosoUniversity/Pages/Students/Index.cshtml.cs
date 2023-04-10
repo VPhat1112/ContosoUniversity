@@ -19,13 +19,13 @@ namespace ContosoUniversity.Pages.Students
             _context = context;
         }
 
-        public IList<Student> Student { get;set; } = default!;
+        public IList<CongNhan> Congnhan { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Students != null)
+            if (_context.congNhans != null)
             {
-                Student = await _context.Students.ToListAsync();
+                Congnhan = await _context.congNhans.ToListAsync();
             }
         }
     }
